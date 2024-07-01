@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content%}
+    <div class="login-container">
+        <div class="login-box">
+            <div>
+            <h1>ESTÉE <br> LAUDER</h1>
+            <div>
+            <div>
+                <img src="C:/Users/Admin/Download/Ellipse 482.jpg">
+            </div>
+            <form method="post" action="{% url "login" %}">
+                {% csrf_token %}
+                {% comment %} {{form}} {% endcomment %}
+                {{form.as_p}}
+                
+                <button type="submit" >Login</button>
+            </form>
+            {% comment %} <a href="{% url 'password_reset' %}">Forgot Password?</a> {% endcomment %}
+            <a href="{% url 'password_reset_request' %}">Forgot Password?</a>
+            
+
+        </div>
+    </div>
+{% endblock content%}
+
